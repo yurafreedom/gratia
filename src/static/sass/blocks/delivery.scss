@@ -1,0 +1,367 @@
+.delivery-block {
+	&__heading {
+		background-image: url('../img/header-bg.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	&__heading h2 {
+		font-weight: 800;
+		font-size: 33px;
+		color: #fff;
+	}
+	&__container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-top: 60px;
+	}
+	&__products {
+		display: flex;
+		flex-direction: column;
+	}
+	&__products-wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 30px;
+		margin-bottom: 40px;
+		border-bottom: 1px dashed #fff000;
+		width: 485px;
+	}
+	&__products-inner {
+		position: relative;
+	}
+	&__products-photo {
+		display: flex;
+		width: 120px;
+		height: 120px;
+		border-radius: 50%;
+		border: 1px solid #fff224;
+		overflow: hidden;
+	}
+	&__products-photo img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		backface-visibility: hidden;
+	}
+	&__products-name {
+		display: flex;
+		margin-right: auto;
+		margin-left: 30px;
+	}
+	&__products-name a {
+		display: block;
+		font-size: 14px;
+		font-weight: 700;
+		color: #2a2a2a;
+		text-decoration: underline;
+	}
+	&__products-price span {
+		font-weight: 700;
+		font-size: 19px;
+		color: #2a2a2a;
+	}
+	&__form-container {
+		display: flex;
+		flex-direction: column;
+		width: 500px;
+	}
+	&__form-controls {
+		display: flex;
+		flex-direction: row;
+		padding-bottom: 30px;
+		margin-bottom: 25px;
+		border-bottom: 3px solid #e9e9e9;
+	}
+	&__form-controls .btn--control {
+		position: relative;
+		display: block;
+		font-size: 17px;
+		font-weight: 700;
+		color: #252525;
+		text-decoration: underline;
+		transition: all .3s ease-in-out;
+		&:not(:last-child) {
+			margin-right: 50px;
+		}
+		&:hover {
+			color: #fff;
+			text-decoration: none;
+		}
+		&:hover::before {
+			content: '';
+			position: absolute;
+			top: -12px;
+			left: -8px;
+			width: calc(100% + 20px);
+			height: 40px;
+			border-radius: 8px;
+			background: linear-gradient(to bottom, #e7b801, #bd8716);
+			box-shadow: 0 4px 0 0px #a6750d;
+			transform: skew(-8deg);
+			z-index: -1;
+		}
+	}
+	&__tab-content {
+		display: none;
+	}
+	&__tab-content.active {
+		display: block;
+	}
+}
+
+.products-block__counter {
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 65px;
+	height: 26px;
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	border-radius: 8px;
+	font-size: 12px;
+}
+
+.btn-minus {
+	display: flex;
+	color: #d29f0c;
+	padding: 5px;
+}
+
+.btn-plus {
+	display: flex;
+	padding: 5px;
+	color: #d29f0c;
+}
+
+.quant-num {
+	display: flex;
+	padding: 5px;
+	font-weight: 700;
+	color: #383838;
+}
+
+[hidden] {
+	display: none!important;
+}
+
+.delivery-form {
+	display: flex;
+	flex-direction: column;
+	span {
+		font-weight: 700;
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+	&__control {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	.delivery-input {
+		width: 208px;
+		outline: none;
+		border: 1px solid #d1d1d1;
+		border-radius: 7px;
+		padding: 14px 13px 10px 13px;
+		margin-bottom: 20px;
+		&::placeholder {
+			font-size: 13px;
+			font-weight: 400;
+			color: #a7a4a4;
+		}
+	}
+	&__radio-controls {
+		display: flex;
+		flex-direction: column;
+	}
+	&__radio-control {
+		display: flex;
+		flex-direction: row;
+	}
+	&__radio-control label {
+		font-weight: 700;
+		font-size: 14px;
+		color: #2a2a2a;
+		margin-left: 20px;
+		margin-bottom: 30px;
+	}
+	&__checkbox-control {
+		display: flex;
+		flex-direction: row;
+		width: 450px;
+		margin-bottom: 30px;
+	}
+	&__checkbox-control label {
+		font-size: 14px;
+		font-weight: 700;
+		color: #2a2a2a;
+		margin-left: 20px;
+	}
+	&__checkbox-control label a {
+		text-decoration: none;
+		color: #e1b104;
+		font-size: 14px;
+		font-weight: 700;
+		transition: all .3s ease-in-out;
+		&:hover {
+			color: #e9ba00;
+		}
+	}
+}
+
+.casting__tab-content {
+	display: none;
+}
+
+.casting__tab-content.active {
+	display: block;
+	margin-bottom: 30px;
+}
+
+.delivery-radio {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	margin: 10px 0 0 7px;
+}
+
+.delivery-radio + label {
+	position: relative;
+	padding: 0 0 0 35px;
+	cursor: pointer;
+}
+
+.delivery-radio + label:before {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: 0;
+	width: 22px;
+	height: 22px;
+	border: 1px solid #CDD1DA;
+	border-radius: 50%;
+	background: #FFF;
+}
+
+.delivery-radio + label:after {
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 5px;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: #e9ba00;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.5);
+	opacity: 0;
+	transition: all .3s ease-in-out;
+}
+
+.delivery-radio:checked + label:after {
+	opacity: 1;
+}
+
+.delivery-checkbox {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	margin: 10px 0 0 7px;
+}
+
+.delivery-checkbox + label {
+	position: relative;
+	padding: 0 0 0 35px;
+	cursor: pointer;
+}
+
+.delivery-checkbox + label:before {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: 0;
+	width: 22px;
+	height: 22px;
+	border: 1px solid #CDD1DA;
+	border-radius: 50%;
+	background: #FFF;
+}
+
+.delivery-checkbox + label:after {
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 5px;
+	width: 12px;
+	height: 12px;
+	background-image: url('../img/tick.svg');
+	background-repeat: no-repeat;
+	opacity: 0;
+	transition: all .3s ease-in-out;
+}
+
+.delivery-checkbox:checked + label:after {
+	opacity: 1;
+}
+
+@media screen and (max-width: 767px) {
+	.delivery-block {
+		&__container {
+			flex-direction: column;
+			align-items: center;
+			margin-bottom: 60px;
+		}
+		&__form-container {
+			margin-top: 45px;
+		}
+		&__products-wrapper {
+			width: 100%;
+		}
+		&__form-container {
+			width: 100%;
+		}
+		&__form-controls {
+			display: flex;
+			flex-direction: column;
+		}
+		&__form-controls .btn--control:not(:last-child) {
+			margin-right: 0;
+			margin-bottom: 25px;
+		}
+	}
+	.delivery-form__control {
+		flex-direction: column;
+		align-items: center;
+	}
+	.delivery-form__checkbox-control {
+		width: 100%;
+	}
+	.btn--step {
+		margin: 0 auto;
+		margin-top: 20px;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+	.delivery-block {
+		&__container {
+			flex-direction: column;
+			align-items: center;
+			margin-bottom: 60px;
+		}
+		&__form-container {
+			margin-top: 45px;
+		}
+	}
+}
